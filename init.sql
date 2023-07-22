@@ -1,8 +1,6 @@
--- Create the database
-CREATE DATABASE your_database;
-
--- Connect to the database
-\c your_database;
-
--- Create schema
-CREATE SCHEMA client1;
+CREATE TABLE public.books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    isbn VARCHAR(255) NOT NULL
+);
