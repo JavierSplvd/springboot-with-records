@@ -50,8 +50,8 @@ public class BookController {
         if (book.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-        bookRepository.save(new Book(id, bookDto.title(), bookDto.author(), bookDto.isbn()));
-        return ResponseEntity.ok().build();
+        Book b = bookRepository.save(new Book(id, bookDto.title(), bookDto.author(), bookDto.isbn()));
+        return ResponseEntity.ok(toRecord(b));
     }
 
     @DeleteMapping("/{id}")
